@@ -1,0 +1,42 @@
+# multiply n by m
+		# read number in1
+		get 
+		st in1
+		# read number in2
+		get 
+		st in2
+		
+		# make n = max(n,m) and m = min(n,m)
+		sub in1
+		jpos greater
+		ld in1	# in1 > in2
+		st n
+		ld in2
+		st m
+		j loop
+greater ld in2	# in2 > in1
+		st n
+		ld in1
+		st m
+		
+loop	ld m
+		jz done
+		sub one
+		st m
+		ld sum
+		add n
+		st sum
+		j loop
+		
+		
+		# print the result
+done	ld sum
+		put
+		halt
+		
+one		const 1
+n 		const
+m 		const
+in1 	const
+in2 	const
+sum 	const 0

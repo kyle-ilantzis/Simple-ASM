@@ -1,0 +1,33 @@
+loop1 	ld m	# while --m > 0
+		sub one #
+		st m	#
+		
+		ld zero #	i = 0
+		st i	#
+		
+loop2		ld i	# i++
+			add one #
+			st i	#
+			
+			ld n 	
+			sub i	
+			jz done1 # while i < n 
+			j loop2  #
+			
+done1	ld one	# print 1
+		put
+		
+		ld m
+		jz done
+		j loop1
+		
+done	ld two	# print 2
+		put
+		halt
+		
+i		const	0
+n 		const 	49999
+m 		const	10
+two 	const 	2
+one		const 	1
+zero	const 	0	
